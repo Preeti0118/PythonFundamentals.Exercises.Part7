@@ -1,3 +1,4 @@
+import random
 from typing import Dict
 
 # Populate this dictionary with at least two languages.
@@ -13,8 +14,7 @@ name_prompt_dict = {1:'What is your name',2:'AApka naam kya hai'
 
 # Populate this dictionary with appropriate prompts that correspond with the ids from lang_dict.
 # Example: Key = 1. Value = 'Hello'.
-greetings_dict = {1:'Hello',2:'Namaste'
-}
+greetings_dict = {1:'Hello',2:'Namaste'}
 
 
 def print_language_options(lang_options: Dict[int, str]) -> None:
@@ -92,10 +92,35 @@ def greet(name: str, greetings_options: Dict[int, str], lang_choice: int) -> Non
     :param lang_choice: The language the user has chosen.
     :return:
     """
-    print (name,greetings_options[lang_choice])
+    rnum = random.randint(0,2)
+    print (name,greetings_options[lang_choice][rnum])
+
+
+
+
+def admin_task() :
+
+    key1 = int(input("enter a language key - "))
+    txt1 = input("enter a language - ")
+    txt2 = input("enter a greeting - ")
+    txt3 = input("enter a name prompt - ")
+
+    lang_dict[key1] = txt1
+
+    greetings_dict[key1] = txt2
+
+    name_prompt_dict[key1] = txt3
 
 
 if __name__ == '__main__':
+
+    choice = input('enter 1 for admin mode and 2 for user mode - ')
+
+    if choice == '1':
+
+        admin_task()
+
+
     print_language_options(lang_dict)
     chosen_lang = language_input()
     while language_choice_is_valid(lang_dict, chosen_lang) is False:
@@ -105,3 +130,4 @@ if __name__ == '__main__':
     selected_prompt = f"{get_name_input(name_prompt_dict, chosen_lang)} \n"
     chosen_name = name_input(selected_prompt)
     greet(chosen_name, greetings_dict, chosen_lang)
+
