@@ -105,3 +105,7 @@ if __name__ == '__main__':
     selected_prompt = f"{get_name_input(name_prompt_dict, chosen_lang)} \n"
     chosen_name = name_input(selected_prompt)
     greet(chosen_name, greetings_dict, chosen_lang)
+
+
+
+#
