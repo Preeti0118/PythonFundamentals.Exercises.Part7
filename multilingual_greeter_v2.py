@@ -57,7 +57,6 @@ def language_choice_is_valid(lang_options: Dict[int, str], lang_choice: int) -> 
         return False
 
 
-
 def get_name_input(name_prompt_options: Dict[int, str], lang_choice: int) -> str:
     """
     This method takes in a dictionary and a key. It returns the value in the dictionary that has a key corresponding to
@@ -119,7 +118,6 @@ if __name__ == '__main__':
     if choice == '1':
 
         admin_task()
-
 
     print_language_options(lang_dict)
     chosen_lang = language_input()
