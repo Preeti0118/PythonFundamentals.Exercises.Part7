@@ -126,7 +126,6 @@ if __name__ == '__main__':
 
         admin_task()
 
-
     print_language_options(lang_dict)
     chosen_lang = language_input()
     while language_choice_is_valid(lang_dict, chosen_lang) is False:
